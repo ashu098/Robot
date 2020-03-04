@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Fire Fighting Robot</title>
+	<link rel="stylesheet" type="text/css" href="s5.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript">
+		$(window).on('scroll',  function(){
+			if ($(window).scrollTop()){
+				$('nav').addClass('black');
+			}
+			else
+			{
+				$('nav').removeClass('black');
+			}
+		})
+	</script>
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<img src="7.jpg">
+		</div>
+		<ul>
+			<li><a href="otd.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="service.html" class="active">Projects</a></li>
+			<li><a href="contact.html">FeedBack</a></li>
+		</ul>
+	</nav>
+	<section class="sec1">
+	</section>
+	<section class="sec2">
+		<h1>Fire Fighting Robot</h1>
+		<h2 style="margin-top: 35px;margin-bottom: 15px;">Why build a Fire Fighting Robot project?</h2>
+		<p>
+			According to National Crime Records Bureau (NCRB), it is estimated that more than 1.2 lakh deaths have been caused because of fire accidents in India from 2010-2014. Even though there are a lot of precautions taken for Fire accidents, these natural/man-made disasters do occur now and then. In the event of a fire breakout, to rescue people and to put out the fire we are forced to use human resources which are not safe. With the advancement of technology especially in Robotics it is very much possible to replace humans with robots for fighting the fire. This would improve the efficiency of firefighters and would also prevent them from risking human lives. Today we are going to build a Fire Fighting Robot using Arduino, which will automatically sense the fire and start the water pump
+		</p>
+		<h2 style="margin-top: 35px;margin-bottom: 15px;">What you'll learn in this course</h2>
+		<p>
+			In this project, we will learn how to build a simple robot using Arduino that could move towards the fire and pump out water around it to put down the fire. It is a very simple robot that would teach us the underlying concept of robotics; you would be able to build more sophisticated robots once you understand the following basics. So let’s get started...
+
+ 
+			<br>
+		</p>
+		<h3 style="margin-top: 35px;margin-bottom: 15px;">Things You will need for this Project.</h3>
+		<p><br>
+			1. Arduino UNO<br>
+2. Fire sensor or Flame sensor (3 Nos)<br>
+3. Servo Motor (SG90)<br>
+4. L293D motor Driver module<br>
+5. Small Breadboard<br>
+6. Robot chassis with motors and wheel (any type)<br>
+7. A small can<br>
+8. Connecting wires<br>
+
+		</p>
+		<h3 style="margin-top: 35px;margin-bottom: 15px;">Circuit :-</h3>
+		<p><img src="1100.png"></p>
+	</section>
+	<section class="sec3" align="center">
+		<h1 style="text-align: center;font-size: 3em;">CODE</h1>
+	<iframe src="s5_code.html"  width="1060" height="560"></iframe>
+	</section>
+	<section class="sec3" align="center">
+		<h1 style="text-align: center;font-size: 3em;">VIDEO FOR REFERENCE</h1>
+		<iframe width="1060" height="500" src="https://www.youtube.com/embed/ZfdxlZ1cUy0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</section>
+</body>
+</html>

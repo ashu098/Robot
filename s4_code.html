@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>voice code</title>
+</head>
+<body>
+<pre style="font-size: 2em;color: #fff;background-color: #000;">
+	<code>
+
+nt input1leftmotor=7;
+int input2leftmotor=3;
+
+int input3rightmotor=2;
+
+int input4rightmotor=4;
+
+void setup() {
+
+pinMode(input1leftmotor, OUTPUT);
+
+pinMode(input2leftmotor, OUTPUT);
+
+pinMode(input3rightmotor, OUTPUT);
+
+pinMode(input4rightmotor, OUTPUT); // put your setup code here, to run once:
+
+}
+
+void loop() {
+
+digitalWrite(input1leftmotor,HIGH);
+
+digitalWrite(input2leftmotor,LOW);
+
+digitalWrite(input3rightmotor,HIGH);
+
+digitalWrite(input4rightmotor,LOW); // put your main code here, to run repeatedly:
+
+}
+
+int ldr1center=A0;
+int ldr2left=A1;
+
+int ldr3right=A2;
+
+void setup() {
+
+pinMode(ldr1center, INPUT);
+
+pinMode(ldr2left, INPUT);
+
+pinMode(ldr3right, INPUT);
+
+Serial.begin(9600); // put your setup code here, to run once:
+
+}
+
+void loop() {
+
+int value1=analogRead(ldr1center);
+
+int value2=analogRead(ldr2left);
+
+int value3=analogRead(ldr3right);
+
+Serial.print("value1=");
+
+Serial.println(value1);
+
+delay(2000);
+
+Serial.print("value2=");
+
+Serial.println(value2);
+
+delay(2000);
+
+Serial.print("value3=");
+
+Serial.println(value3);
+
+delay(2000); // put your main code here, to run repeatedly:
+
+}
+int enablepin1=11;
+int enablepin2=12;
+
+int input1leftmotor=2;
+
+int input2leftmotor=4;
+
+int input3rightmotor=7;
+
+int input4rightmotor=3;
+
+int ldr1center=A0;
+
+int ldr2left=A1;
+
+int ldr3right=A2;
+
+void setup() {
+
+pinMode(input1leftmotor, OUTPUT);
+
+pinMode(input2leftmotor, OUTPUT);
+
+pinMode(enablepin1, OUTPUT);
+
+pinMode(input3rightmotor, OUTPUT);
+
+pinMode(input4rightmotor, OUTPUT);
+
+pinMode(enablepin2, OUTPUT);
+
+pinMode(ldr1center, INPUT);
+
+pinMode(ldr2left, INPUT);
+
+pinMode(ldr3right, INPUT);
+
+delay(2000);
+
+Serial.begin(9600);
+
+}
+
+void loop() {
+
+int value1=analogRead(ldr1center);
+
+int value2=analogRead(ldr2left);
+
+int value3=analogRead(ldr3right);
+
+if (value1>value2&&value1>value3) {
+
+straight();
+
+delay(1000);
+
+Serial.println("straight");
+
+}
+
+else if (value2>value1&&value2>value3) {
+
+left();
+
+Serial.println("left");
+
+delay(600);
+
+}
+
+else if (value3>value1&&value3>value2) {
+
+right();
+
+delay(600);
+
+Serial.println("right");
+
+}
+
+}
+
+void straight(){
+
+digitalWrite(input1leftmotor,HIGH);
+
+digitalWrite(input2leftmotor,LOW);
+
+digitalWrite(input3rightmotor,HIGH);
+
+digitalWrite(input4rightmotor,LOW);
+
+}
+
+void left(){
+
+digitalWrite(input1leftmotor,LOW);
+
+digitalWrite(input2leftmotor,LOW);
+
+digitalWrite(input3rightmotor,HIGH);
+
+digitalWrite(input4rightmotor,LOW);
+
+}
+
+void right(){
+
+digitalWrite(input1leftmotor,HIGH);
+
+digitalWrite(input2leftmotor,LOW);
+
+digitalWrite(input3rightmotor,LOW);
+
+digitalWrite(input4rightmotor,LOW);
+
+}
+</code>
+
+</pre>
+</body>
+</html>

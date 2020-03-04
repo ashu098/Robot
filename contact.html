@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>FeedBack Form</title>
+            <link rel="stylesheet" type="text/css" href="contact.css">
+    </head>
+    <body>
+            <!-- <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+            <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyCcvPHxbMgVFP0wbuYF89wLqeehpo5ejJ4",
+                authDomain: "trial-713fa.firebaseapp.com",
+                databaseURL: "https://trial-713fa.firebaseio.com",
+                projectId: "trial-713fa",
+                storageBucket: "trial-713fa.appspot.com",
+                messagingSenderId: "784787324579"
+              };
+              firebase.initializeApp(config);
+            </script>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-functions.js"></script>
+
+<script>
+    function writeOnFirebase()
+    {
+        var database = firebase.database();
+
+        // var ref=firebase.database().ref('/users');
+
+        var name = document.getElementById("na").value;
+        var email = document.getElementById("email").value;
+        var feedback = document.getElementById("feedback").value;
+
+        window.alert("You are registered");
+
+        //window.alert(name);
+
+//         firebase.database().ref('users/').set({
+//     name: name,
+//     email: email,
+//     feedback : feedback
+//   });
+        
+        var postData = {
+            name: name,
+            email: email,
+            feedback: feedback
+        };
+
+        var newPostKey = firebase.database().ref().child('users').push().key;
+
+        var updates = {};
+  // updates['/users/' + newPostKey] = postData;
+  updates['/users/' + name] = postData;
+
+
+
+  return firebase.database().ref().update(updates);
+
+    }
+</script>-->
+
+
+<header>
+        <div class="main">
+            <nav>
+                <ul>
+                    <li><a href="otd.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">FeedBack</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<div class="contact-title">
+<h1>FeedBack Form</h1>
+<h2>Feel Free to Contact us</h2>
+</div>
+    
+<form name="form1" method="post" action="index.php">
+            <input type="text" name="name"  id="name" placeholder="Your Name" required="" style="width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 16px;
+    height: 45px;
+    margin-top: 50px;">
+            <br>
+            <input type="email" name="email" id="email" placeholder="Your Email" required="" style="width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 16px;
+    height: 45px;">
+            <br>
+            <textarea name="feedback"  id="feedback" placeholder="Your Feedback" style="width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 16px;
+    height: 45px;"></textarea>
+            <br>
+			<button type="submit" style="padding: 10px; color: #fff; background-color: grey;width: 300px;height: 50px;font-size: 1.1em;box-shadow: 0 0 10px 10px grey;margin-top: 30px;"><b>SEND MESSAGE</b></button>
+        </form>
+    </body>
+</html>
